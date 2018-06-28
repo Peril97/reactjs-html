@@ -2,17 +2,7 @@ import { db } from './firebase';
 // User API
 var format = require('date-format');
 
-var description, url, rights;
-export const doCreateUser = (username, email, password) =>
-  db.ref("Users/").push({
-    username,
-    email,
-    password,
-    rights: "normal",
-  });
-
-export const onceGetUsers = () =>
-  db.ref('Users').once('value');
+var description, url;
 
 export const onceGetRSS = () =>
   db.ref('RSS').once('value');
